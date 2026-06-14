@@ -1,0 +1,11 @@
+# Sistema
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Temporários
+*.tmp
+assets/_*
+
+# Bundle de fotos (não versionar)
+files.zip

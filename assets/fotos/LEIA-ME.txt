@@ -1,0 +1,7 @@
+Coloque aqui as fotos reais (pets, equipe, atendimentos).
+
+Para usar uma foto na seção "Sobre Nós", edite o index.html e adicione o src, por exemplo:
+  <img class="ph" src="assets/fotos/dra-esther.jpg" data-label="Dra. Esther" alt="Dra. Esther em atendimento" />
+
+Se nenhuma foto for adicionada, o site mostra automaticamente um espaço
+reservado com a identidade da marca (fundo azul + pata dourada).
