@@ -1,6 +1,6 @@
 /* Service Worker — Vet em Casa
    Cache simples para permitir instalação como app (PWA) e uso offline básico. */
-const CACHE = "vetemcasa-v4";
+const CACHE = "vetemcasa-v5";
 const ASSETS = [
   "./",
   "./index.html",

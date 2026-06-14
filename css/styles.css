@@ -80,23 +80,27 @@ p{margin:0 0 1rem}
 /* Decorative background paws */
 /* ---------- Fundo animado (desenhos de pets flutuando, site inteiro) ---------- */
 .bg-paws{position:fixed; inset:0; z-index:-1; pointer-events:none; overflow:hidden}
-.bg-doodle{position:absolute; width:120px; height:120px; color:var(--petroleo); opacity:.05;
-  animation:bg-drift var(--d,32s) ease-in-out infinite; animation-delay:var(--delay,0s); will-change:transform}
-.bg-doodle path{fill:none; stroke:currentColor; stroke-width:3; stroke-linecap:round; stroke-linejoin:round}
-[data-theme="dark"] .bg-doodle{color:var(--agua); opacity:.07}
-@keyframes bg-drift{
-  0%{transform:translate3d(0,0,0) rotate(var(--r,0deg))}
-  50%{transform:translate3d(var(--dx,20px),var(--dy,-26px),0) rotate(calc(var(--r,0deg) + 10deg))}
-  100%{transform:translate3d(0,0,0) rotate(var(--r,0deg))}
+.bg-doodle{position:absolute; width:120px; height:120px; color:var(--petroleo); opacity:.13; will-change:transform}
+/* cada desenho se desenha sozinho e depois some, em looping */
+.bg-doodle path{fill:none; stroke:currentColor; stroke-width:2.6; stroke-linecap:round; stroke-linejoin:round;
+  stroke-dasharray:1; stroke-dashoffset:1; animation:bg-draw var(--dd,9s) ease-in-out infinite; animation-delay:var(--delay,0s)}
+@keyframes bg-draw{
+  0%{stroke-dashoffset:1}            /* nada desenhado */
+  6%{stroke-dashoffset:1}
+  40%{stroke-dashoffset:0}           /* totalmente desenhado */
+  62%{stroke-dashoffset:0}           /* fica visível um instante */
+  96%{stroke-dashoffset:-1}          /* some (apaga) */
+  100%{stroke-dashoffset:-1}
 }
-.bd1{top:8%;  left:4%;   width:150px; --d:34s; --dx:24px;  --dy:-30px; --r:-12deg; --delay:0s}
-.bd2{top:22%; left:88%;  width:120px; --d:40s; --dx:-28px; --dy:22px;  --r:14deg;  --delay:3s}
-.bd3{top:48%; left:7%;   width:90px;  --d:28s; --dx:18px;  --dy:24px;  --r:8deg;   --delay:1.5s; color:#E0608A}
-.bd4{top:40%; left:80%;  width:130px; --d:36s; --dx:-22px; --dy:-20px; --r:-9deg;  --delay:5s}
-.bd5{top:74%; left:14%;  width:110px; --d:30s; --dx:26px;  --dy:-22px; --r:11deg;  --delay:2.4s}
-.bd6{top:82%; left:84%;  width:120px; --d:38s; --dx:-20px; --dy:-24px; --r:-7deg;  --delay:4s}
-.bd7{top:64%; left:46%;  width:120px; --d:42s; --dx:22px;  --dy:18px;  --r:6deg;   --delay:6s}
-@media (max-width:760px){ .bd2,.bd4,.bd7{display:none} .bg-doodle{opacity:.04} [data-theme="dark"] .bg-doodle{opacity:.06} }
+[data-theme="dark"] .bg-doodle{color:var(--agua); opacity:.18}
+.bd1{top:8%;  left:4%;   width:150px; --dd:8s;    --delay:0s}
+.bd2{top:22%; left:88%;  width:120px; --dd:10.5s; --delay:1.4s}
+.bd3{top:48%; left:7%;   width:90px;  --dd:7.5s;  --delay:.7s; color:#E0608A}
+.bd4{top:40%; left:80%;  width:130px; --dd:11s;   --delay:2.6s}
+.bd5{top:74%; left:14%;  width:110px; --dd:9s;    --delay:1.9s}
+.bd6{top:82%; left:84%;  width:120px; --dd:12s;   --delay:3.4s}
+.bd7{top:64%; left:46%;  width:120px; --dd:9.5s;  --delay:.3s}
+@media (max-width:760px){ .bd2,.bd4,.bd7{display:none} }
 
 /* Roof chevron motif (the logo signature) */
 .roof{display:inline-block; width:26px; height:9px; position:relative; vertical-align:middle}
@@ -351,8 +355,9 @@ p{margin:0 0 1rem}
 .blog-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:1.4rem}
 .post{background:var(--surface); border:1px solid var(--line); border-radius:var(--radius); overflow:hidden; box-shadow:var(--shadow-sm); transition:transform .3s, box-shadow .3s; display:flex; flex-direction:column}
 .post:hover{transform:translateY(-5px); box-shadow:var(--shadow)}
-.post-img{aspect-ratio:16/10; position:relative; background:linear-gradient(150deg,var(--navy),var(--petroleo))}
-.post-cat{position:absolute; top:12px; left:12px; background:var(--surface); color:var(--petroleo); font-size:.74rem; font-weight:700; padding:.3em .7em; border-radius:999px}
+.post-img{aspect-ratio:16/10; position:relative; overflow:hidden; background:linear-gradient(150deg,var(--navy),var(--petroleo))}
+.post-img svg{position:absolute; inset:0; width:100%; height:100%; display:block}
+.post-cat{position:absolute; z-index:2; top:12px; left:12px; background:var(--surface); color:var(--petroleo); font-size:.74rem; font-weight:700; padding:.3em .7em; border-radius:999px}
 [data-theme="dark"] .post-cat{color:var(--agua)}
 .post-body{padding:1.2rem 1.3rem 1.4rem; display:flex; flex-direction:column; flex:1}
 .post-body h3{font-size:1.12rem; margin-bottom:.5rem}
@@ -460,5 +465,5 @@ a.contact-card:hover{transform:translateY(-5px); box-shadow:var(--shadow)}
   .js .reveal{opacity:1; transform:none}
   .hero-logo-anim{display:none} /* troca a logo animada pela versão estática */
   .hero-frame{background:url("../assets/hero-logo-still.png") center/contain no-repeat}
-  .doodle path{stroke-dashoffset:0 !important} /* doodles ficam desenhados, sem animar */
+  .doodle path,.bg-doodle path{stroke-dashoffset:0 !important} /* doodles ficam desenhados, sem animar */
 }
