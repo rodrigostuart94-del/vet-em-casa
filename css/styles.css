@@ -316,6 +316,8 @@ p{margin:0 0 1rem}
 .reviews-track{display:flex; transition:transform .6s cubic-bezier(.6,.05,.2,1)}
 .review{flex:0 0 100%; padding:.5rem}
 .review-inner{background:var(--surface); border:1px solid var(--line); border-radius:var(--radius); padding:clamp(1.6rem,4vw,2.6rem); box-shadow:var(--shadow-sm); max-width:760px; margin-inline:auto; text-align:center}
+.g-badge{display:inline-flex; align-items:center; gap:.45rem; font-size:.82rem; font-weight:600; color:var(--ink-soft); background:var(--bg); border:1px solid var(--line); border-radius:999px; padding:.32rem .7rem; margin-bottom:.9rem}
+.g-logo{width:16px; height:16px; flex:none}
 .stars{color:var(--ouro); font-size:1.2rem; letter-spacing:.1em; margin-bottom:1rem}
 .review-text{font-family:var(--display); font-size:clamp(1.15rem,2.2vw,1.5rem); font-weight:500; line-height:1.45; margin:0 0 1.4rem}
 .review-author{display:flex; align-items:center; justify-content:center; gap:.8rem}

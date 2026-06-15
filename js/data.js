@@ -45,12 +45,27 @@ const SERVICOS = [
   }
 ];
 
+/* Avaliações do Google copie aqui as avaliações reais do seu perfil.
+   Campos de cada avaliação:
+     texto  -> o comentário escrito pelo cliente
+     autor  -> nome de quem avaliou (ex.: "Camila R.")
+     pet    -> linha de baixo (ex.: "Tutora do Thor"); pode deixar "" se preferir
+     nota   -> número de estrelas de 1 a 5 (normalmente 5)
+     cor    -> cor do círculo do avatar (use qualquer cor da marca)
+   Para adicionar mais uma, é só copiar uma linha e colar abaixo. */
 const DEPOIMENTOS = [
-  { texto:"Atendimento maravilhoso! Meu cachorro ficou muito mais tranquilo sendo atendido em casa. A Dra. Esther tem um carinho enorme.", autor:"Camila R.", pet:"Tutora do Thor", cor:"#0C4A56" },
-  { texto:"Minha gata é super arisca e nunca aceitou ir à clínica. Em casa foi outra história atendimento calmo e cuidadoso do início ao fim.", autor:"Rafael M.", pet:"Tutor da Mel", cor:"#C6A15B" },
-  { texto:"Profissional atenciosa e humana de verdade. Explicou tudo com paciência e meu pet nem percebeu a vacina. Recomendo de olhos fechados!", autor:"Patrícia L.", pet:"Tutora do Bento", cor:"#7FCDBF" },
-  { texto:"Cuidou do meu idoso de 14 anos com um respeito que me emocionou. Saber que ele foi cuidado em casa fez toda a diferença para nós.", autor:"João P.", pet:"Tutor da Nina", cor:"#1B2A47" },
-  { texto:"Praticidade e carinho na mesma visita. Agendei pelo WhatsApp e em pouco tempo estava tudo resolvido sem estresse nenhum.", autor:"Aline S.", pet:"Tutora do Caramelo", cor:"#0C4A56" }
+  { texto:"Sou muito grata pelo cuidado excepcional que a Esther tem com os meus pets: a Zoe, minha cadela, e as minhas gatinhas Brahma e Lupita. O atendimento dela é verdadeiramente humanizado, sempre com paciência, carinho e atenção aos detalhes. Ela trata cada um deles com respeito e sensibilidade, como se fossem dela. Outro ponto que faz toda a diferença é a possibilidade de atendimento domiciliar: isso reduz o estresse dos meus pets e traz muita tranquilidade para mim como tutora. Recomendo de olhos fechados!", autor:"Taylane Mello", pet:"há 1 ano", nota:5, cor:"#0C4A56" },
+  { texto:"A melhor vet!! Atenciosa, cuidadosa e passa confiança tanto para nós donos como para os nossos pets! E o melhor de tudo, em disparado, é que ela atende em casa, então os pets ficam super tranquilos por estarem no lugarzinho deles! Não troco nunca mais!!!", autor:"Camilla Corradini", pet:"há 1 ano", nota:5, cor:"#C6A15B" },
+  { texto:"A melhor veterinária da cidade!! Sempre atende com o maior carinho e cuidado. Minhas nenéns amam a Tia Esther ❤️ Recomendo sempre para todos de olhos fechados, podem confiar!!", autor:"Mannoella Ferreira", pet:"há 1 ano", nota:5, cor:"#7FCDBF" },
+  { texto:"Profissional maravilhosa, extremamente dedicada, atenciosa e cuidadosa com os animais. Sempre transmite segurança, clareza nas orientações e muito amor pelo que faz. Minha total confiança e admiração pelo trabalho dela. Super recomendo!", autor:"Daniella Fernandes", pet:"há 1 ano", nota:5, cor:"#1B2A47" },
+  { texto:"Experiência maravilhosa de ter a consulta para o seu pet no conforto da sua casa. Sem mencionar o quanto é muito mais confortável para o nosso pet e para nós. Melhor escolha!", autor:"Laís Bittencourt", pet:"há 1 ano", nota:5, cor:"#12606E" },
+  { texto:"Excelente profissional, atenciosa e dedicada! Cuidou com muito carinho e competência dos meus animais ❤️ Recomendo demais!", autor:"João Matheus", pet:"há 1 ano", nota:5, cor:"#D8B36A" },
+  { texto:"Recomendo de coração a Dra. Esther para quem procura uma veterinária de confiança, dedicada e que realmente se importa com o bem-estar dos nossos bichinhos. 💛🐾", autor:"Lara Rocha Fernandes", pet:"há 1 ano", nota:5, cor:"#0C4A56" },
+  { texto:"Muito atenciosa, responsável e comprometida. Tem o dom com os bichinhos! Confio de olhos fechados.", autor:"Maria Laura Oliveira", pet:"há 1 ano", nota:5, cor:"#C6A15B" },
+  { texto:"Ótima veterinária, grato pelo atendimento... Super recomendo!", autor:"Igor Cunha", pet:"há 11 meses", nota:5, cor:"#7FCDBF" },
+  { texto:"Super atenciosa, profissional incrível!", autor:"Milena Nascimento", pet:"há 1 ano", nota:5, cor:"#1B2A47" },
+  { texto:"A melhor veterinária de Teresópolis!!!", autor:"Vanessa Kropf", pet:"há 1 ano", nota:5, cor:"#12606E" },
+  { texto:"Muito boa, atenciosa.", autor:"Catia Resende", pet:"Local Guide · há 1 ano", nota:5, cor:"#D8B36A" }
 ];
 
 const BLOG = [
