@@ -140,8 +140,8 @@ p{margin:0 0 1rem}
 }
 .site-header.scrolled{border-bottom-color:var(--line); box-shadow:var(--shadow-sm)}
 .brand{display:flex; align-items:center; gap:.7rem; margin-right:auto}
-.brand-chip{display:grid; place-items:center; width:46px; height:46px; border-radius:13px; overflow:hidden; box-shadow:var(--shadow-sm); flex:none}
-.brand-chip img{width:100%; height:100%; object-fit:cover}
+.brand-chip{display:grid; place-items:center; width:64px; height:46px; flex:none}
+.brand-chip img{width:100%; height:100%; object-fit:contain}
 .brand-name{font-family:var(--display); font-weight:600; font-size:1.18rem; line-height:1; display:block}
 .brand-sub{font-size:.74rem; letter-spacing:.12em; text-transform:uppercase; color:var(--ink-soft); font-weight:600}
 
@@ -383,7 +383,7 @@ a.contact-card:hover{transform:translateY(-5px); box-shadow:var(--shadow)}
 /* ---------- Footer ---------- */
 .site-footer{background:var(--navy); color:#D8E2E6; padding:clamp(48px,6vw,72px) 0 28px; margin-top:40px}
 .footer-grid{display:grid; grid-template-columns:1.4fr 1fr 1fr 1fr; gap:2rem}
-.f-brand .brand-chip{width:54px; height:54px; border-radius:15px}
+.f-brand .brand-chip{width:76px; height:54px}
 .f-emotional{font-family:var(--script); font-size:1.5rem; color:var(--ouro-claro); line-height:1.25; margin:1rem 0 0; max-width:24ch}
 .f-col h4{font-family:var(--display); color:#fff; font-size:1.05rem; margin-bottom:.8rem}
 .f-col p{margin:0 0 .5rem; font-size:.92rem; color:rgba(216,226,230,.8)}
